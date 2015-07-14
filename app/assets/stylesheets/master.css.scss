@@ -13,3 +13,19 @@ h1, h2, h3, h4, h5, h6 {
   margin:0;
   padding:0;
 }
+body {
+  background: url('/assets/concrete_seamless.png');
+  font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+}
+.navbar.navbar-inverse {
+  background:url('/assets/stardust2.png');
+  border-radius: 0;
+  box-shadow: 0px 1px 3px #2a2a2a;
+}
+.navbar-inverse .navbar-brand {
+  color: #E3E85A;
+    font-family: 'anonymousregular', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  font-size:26px;
+}
