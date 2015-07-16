@@ -15,6 +15,7 @@ Nomster::Application.routes.draw do
   #   resources :products
 
  root 'places#index'
+ resources :places
 
   # Example resource route with options:
   #   resources :products do
