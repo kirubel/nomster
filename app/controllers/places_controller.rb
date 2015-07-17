@@ -40,7 +40,7 @@ before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :des
   	else
     render :edit, :status => :unprocessable_entity
   	end
-  	redirect_to root_path
+  	
   		
   	end
 
