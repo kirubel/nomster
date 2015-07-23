@@ -15,9 +15,11 @@ Nomster::Application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
- root 'places#index'
- resources :places
  devise_for :users
+  root 'places#index'
+  resources :places do
+    resources :comments, :only => :create
+  end
 
 
   # Example resource route with options:
