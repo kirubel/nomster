@@ -29,6 +29,8 @@ gem 'devise', '>= 3.2.4'
 
 gem 'geocoder'
 
+gem 'will_paginate'
+
 gem 'figaro', ">= 1.0.0"
 
 # Use jquery as the JavaScript library
