@@ -2,64 +2,65 @@ class PlacesController < ApplicationController
 before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
 
     def index
-    	# @places = Place.all
+      # @places = Place.all
       @places = Place.paginate(:page => params[:page], :per_page => 5)
-	end
+  end
 
-	def new
-		@place = Place.new		
-	end
+  def new
+    @place = Place.new    
+  end
 
-	def create
-	@place = current_user.places.create(place_params)
-  	if @place.valid?
+  def create
+  @place = current_user.places.create(place_params)
+    if @place.valid?
     redirect_to root_path
-  	else
+    else
     render :new, :status => :unprocessable_entity
-  	end
-	end
+    end
+  end
 
   def show
   @place = Place.find(params[:id])
   @comment = Comment.new
+  @photo = Photo.new
   end
 
-	def edit
-	@place = Place.find(params[:id])
-	 if @place.user != current_user
+  def edit
+  @place = Place.find(params[:id])
+   if @place.user != current_user
     return render :text => 'Not Allowed', :status => :forbidden
-  	end
-  	end
+    end
+    end
 
-  	def update
-  	@place = Place.find(params[:id])
-  	if @place.user != current_user
+    def update
+    @place = Place.find(params[:id])
+    if @place.user != current_user
     return render :text => 'Not Allowed', :status => :forbidden
-  	end
-  	@place.update_attributes(place_params)
-  	 if @place.valid?
+    end
+    @place.update_attributes(place_params)
+     if @place.valid?
     redirect_to root_path
-  	else
+    else
     render :edit, :status => :unprocessable_entity
-  	end
-  	
-  		
-  	end
+    end
+    
+      
+    end
 
-  	def destroy
-  	@place = Place.find(params[:id])
-  	if @place.user != current_user
+    def destroy
+    @place = Place.find(params[:id])
+    if @place.user != current_user
     return render :text => 'Not Allowed', :status => :forbidden
-  	end
-  	@place.destroy
-  	redirect_to root_path
-	end
+    end
+    @place.destroy
+    redirect_to root_path
+  end
 
 
-	private
+  private
 
-	def place_params
-		params.require(:place).permit(:name, :description, :address)
-		
-	end
+  def place_params
+    params.require(:place).permit(:name, :description, :address)
+    
+  end
 end
