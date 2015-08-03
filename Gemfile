@@ -37,6 +37,8 @@ gem 'will_paginate'
 
 gem 'figaro', ">= 1.0.0"
 
+gem 'fog', '~>1.3.1'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
