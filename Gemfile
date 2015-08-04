@@ -39,7 +39,7 @@ gem 'figaro', ">= 1.0.0"
 
 gem 'fog', '~>1.3.1'
 
-gem 'net-ssh'
+gem 'net-ssh', '!= 2.10.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
