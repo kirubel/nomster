@@ -172,6 +172,7 @@ DEPENDENCIES
   geocoder
   jbuilder (~> 1.2)
   jquery-rails
+  net-ssh
   pg
   pry-rails
   rails (= 4.0.1)
