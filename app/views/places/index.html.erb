@@ -40,7 +40,7 @@
 <% @places.each do |place| %>
     <div class="booyah-box col-xs-10 col-xs-offset-1">
     <h1><%= link_to place.name, place_path(place) %></h1><br />
-    <h1><%= place.name %></h1>
+   <!--  <h1><%= place.name %></h1> -->
     <i><%= place.address %></i><br /><br />
     <p><%= place.description %></p><br />
     
@@ -62,9 +62,13 @@
   </div>
 
   <% end %>
-<%= will_paginate @places %>
+
   </div>
   
 
 
 <% end %>
+
+<div class="col-xs-19">
+<h3><%= will_paginate @places %></h3><br />
+ </div>
